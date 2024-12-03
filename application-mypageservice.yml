@@ -1,0 +1,8 @@
+jwt:
+  secret: abcdefghijklmnopqrstuvwxyz123456
+
+naver:
+  clova:
+    ocr:
+      url: https://coxc9bzqzr.apigw.ntruss.com/custom/v1/36417/b8f21adc5965010bc29c4bd02c18894a5509567985c62dcb44393d55c8d91ea2/general
+      secretKey: endqVEVBRnVhRnNSUG1oSkhOTFdJTlNyVGpmSEdPVVY=
