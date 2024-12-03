@@ -1,2 +1,2 @@
 jwt:
- secret: abcdefghijklmnopqrstuvwxyz123456
+ jwtSecret: abcdefghijklmnopqrstuvwxyz123456
