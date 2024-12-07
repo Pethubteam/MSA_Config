@@ -1,0 +1,10 @@
+eureka:
+  instance:
+    non-secure-port: ${server.port}  # Eureka에서 사용할 포트 번호
+    prefer-ip-address: true  # IP 주소를 우선 사용
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka  # Eureka Server의 URL
+
+jwt:
+  secret: "abcdefghijklmnopqrstuvwxyz123456"
