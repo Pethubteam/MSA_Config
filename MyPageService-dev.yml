@@ -1,5 +1,5 @@
 jwt:
-  jwtSecret: abcdefghijklmnopqrstuvwxyz123456
+  secret: abcdefghijklmnopqrstuvwxyz123456
 
 naver:
   clova:
