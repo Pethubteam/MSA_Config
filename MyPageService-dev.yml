@@ -4,5 +4,5 @@ jwt:
 naver:
   clova:
     ocr:
-      url: https://coxc9bzqzr.apigw.ntruss.com/custom/v1/36417/b8f21adc5965010bc29c4bd02c18894a5509567985c62dcb44393d55c8d91ea2/general
-      secretKey: endqVEVBRnVhRnNSUG1oSkhOTFdJTlNyVGpmSEdPVVY=
+      url: https://kkhynb5fz1.apigw.ntruss.com/custom/v1/36596/5f7ff8f341c308170bbe52b664646ef40bbe6880ddfc09caf6a75559424814ee/document/receipt
+      secretKey: SFBhVXpkS0x3d2RtWWVlRkpBSHlWWVlvVWJ5c2dxcFA=
