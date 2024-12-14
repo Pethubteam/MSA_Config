@@ -1,0 +1,41 @@
+resilience4j:
+  # 지연 시간
+  timelimiter:
+    configs:
+      default:
+        cancel-running-future: true
+        timeout-duration: 3s    # 3초 내에 응답이 오지 않으면 타임아웃 >> 실패로 판단
+  # 실패율
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowType: COUNT_BASED    # 시간기반이 아닌 요청 수 기준으로 실패율 계산
+        slidingWindowSize: 5        # 최근 요청 5개를 기준으로 실패율을 계산
+        failureRateThreshold: 50    # 실패율이 50% 이상이면 Open으로 전환
+        waitDurationInOpenState: 30s    # Open일 때, 30초 기다린 후 자동으로 Half-open으로 전환
+        permittedNumberOfCallsInHalfOpenState: 3    # Half-Open일 때, 3개의 요청의 결과에 따라 Open할지 Closed할지 결정
+    instances:
+      petownerFeignClient:
+        base-config: default
+        register-health-indicator: true    # Actuator에서 상태 노출
+      hospitalFeignClient:
+        base-config: default
+        register-health-indicator: true
+  # 바로 실패로 처리하지 않고 재시도
+  retry:
+    instances:
+      petownerFeignClient:
+        maxAttempts: 3    # 최대 3번 재시도
+        waitDuration: 1s    # 각 재시도 간 대기 시간
+      hospitalFeignClient:
+        maxAttempts: 3         
+        waitDuration: 1s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
